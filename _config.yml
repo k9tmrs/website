@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: K9 TMRS
 description: Affordable timing system for competitive dog sports.
+remote_theme: pages-themes/minima
