@@ -18,21 +18,35 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: K9 TMRS
+author:
+  name: K9 TMRS
+  email: help@k9tmrs.com
+
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+  K9 TMRS offers an affordable timin system for competitive dog sports, primarily aimed at Hoopers.
 
 # Build settings
 theme: minima
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - privacy.md
+
+minima:
+  skin: dark
+
+
+  # Generate social links in footer.
+  social_links:
+    - { platform: facebook,       user_url: "https://www.facebook.com/k9tmrs" }
+    - { platform: github,         user_url: "https://github.com/k9tmrs" }
+    - { platform: instagram,      user_url: "https://www.instagram.com/k9tmrs" }
+    - { platform: x,              user_url: "https://x.com/k9tmrs" }
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
