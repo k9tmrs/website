@@ -1,3 +1,10 @@
+---
+layout: page
+title: Privacy
+permalink: /privacy/
+---
+
+
 # K9 TMRS Privacy Statement
 Last updated: May 16, 2024
 
