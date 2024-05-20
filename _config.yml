@@ -47,6 +47,7 @@ minima:
     - { platform: instagram,      user_url: "https://www.instagram.com/k9tmrs" }
     - { platform: x,              user_url: "https://x.com/k9tmrs" }
 
+google_analytics: GTM-M7NVCCBV
 
 # Exclude from processing.
 # The following items will not be processed, by default.
