@@ -1,0 +1,144 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+$spacing-unit:     30px !default;
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+$on-medium:        $on-palm !default;
+$on-large:         $on-laptop !default;
+
+.main {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+	word-wrap: break-word;
+	
+	@include large {
+    max-width: 64rem;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  @include medium {
+    padding: 2rem 4rem;
+    font-size: 1.1rem;
+  }
+
+  @include small {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.page-header {
+	background-image: url('/assets/images/header.jpg'); 
+	background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: bottom;
+    background-size: cover;
+	height: 24rem;
+}
+
+.svg-icon {
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.grey {
+  color: #828282;
+}
+
+.social-media-list {
+  display: table;
+  margin: 0 auto;
+  li {
+    float: left;
+    margin: 5px 10px 5px 0;
+    &:last-of-type { margin-right: 0 }
+    a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid;
+    }
+  }
+}
+
+/**
+ * Site footer
+ */
+ 
+.site-footer {
+  padding: $spacing-unit 0;
+}
+
+.footer-heading {
+  margin-bottom: $spacing-unit * .5;
+}
+
+.feed-subscribe .svg-icon {
+  padding: 5px 5px 2px 0
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+}
+
+.footer-col-wrapper,
+.social-links {
+ // @include relative-font-size(0.9375);
+  //color: $brand-color;
+}
+
+.footer-col {
+  margin-bottom: $spacing-unit * .5;
+}
+
+.footer-col-1,
+.footer-col-2 {
+  width: calc(50% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+  width: calc(100% - (#{$spacing-unit} / 2));
+}
+
+@media screen and (min-width: $on-large) {
+  .footer-col-1 {
+    width: calc(35% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-2 {
+    width: calc(20% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: calc(45% - (#{$spacing-unit} / 2));
+  }
+}
+
+@media screen and (min-width: $on-medium) {
+  .footer-col-wrapper {
+    display: flex
+  }
+
+  .footer-col {
+    width: calc(100% - (#{$spacing-unit} / 2));
+    padding: 0 ($spacing-unit * .5);
+
+    &:first-child {
+      padding-right: $spacing-unit * .5;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      padding-left: $spacing-unit * .5;
+    }
+  }
+}

@@ -25,27 +25,29 @@ author:
 
 description: >- # this means to ignore newlines until "baseurl:"
   K9 TMRS offers an affordable timing system for competitive dog sports, primarily aimed at Hoopers.
-
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
-theme: minima
-
+#theme: cayman
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 header_pages:
   - privacy.md
 
-minima:
-  skin: dark
+#minima:
+ # skin: dark
 
 
   # Generate social links in footer.
-  social_links:
-    - { platform: facebook,       user_url: "https://www.facebook.com/k9tmrs" }
-    - { platform: github,         user_url: "https://github.com/k9tmrs" }
-    - { platform: instagram,      user_url: "https://www.instagram.com/k9tmrs" }
-    - { platform: x,              user_url: "https://x.com/k9tmrs" }
+social_links:
+  - { platform: facebook,       user_url: "https://www.facebook.com/k9tmrs" }
+  - { platform: github,         user_url: "https://github.com/k9tmrs" }
+  - { platform: instagram,      user_url: "https://www.instagram.com/k9tmrs" }
+  - { platform: x,              user_url: "https://x.com/k9tmrs" }
 
 google_analytics: GTM-M7NVCCBV
 
