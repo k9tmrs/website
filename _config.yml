@@ -36,6 +36,8 @@ plugins:
 
 header_pages:
   - privacy.md
+  
+ repository: k9tmrs/website
 
 #minima:
  # skin: dark
