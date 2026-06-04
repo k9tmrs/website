@@ -29,6 +29,6 @@ Push to `main` triggers `.github/workflows/deploy.yml`, which uploads the repo r
   - Scroll-in animations require the `.scroll-reveal` class (JS toggles `.visible` via `IntersectionObserver`).
   - The contact form is **front-end only**: it validates and shows a fake success after a `setTimeout`; it does not POST anywhere. Wiring it to a real backend is unimplemented.
 
-- **Missing assets.** Several `<img>` tags reference `assets/*.svg` placeholders, but there is no `assets/` directory (only `images/tmrs-show.jpg` exists). These render broken by design until real assets are added.
+- **All images live in `images/`** — the hero photo (`tmrs-show.jpg`) plus hand-authored, on-brand SVG illustrations (`setup-flow.svg`, `features-diagram.svg`, `show-processor-dashboard.svg`). There is no `assets/` directory. `show-processor-dashboard.svg` is only referenced from the commented-out Show Processors section.
 
 - **Removed-but-not-deleted "Show Processors" section.** It lives as a large HTML comment in `index.html` and commented-out nav links. Re-enabling means uncommenting both the section and its nav entries, not rewriting from scratch.

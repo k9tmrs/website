@@ -403,7 +403,7 @@ a:focus-visible {
   box-shadow: none;
 }
 
-.hero-image-placeholder {
+.hero-image-frame {
   width: 100%;
   min-height: 260px;
   border-radius: 16px;
@@ -422,13 +422,13 @@ a:focus-visible {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.hero-image-placeholder:hover {
+.hero-image-frame:hover {
   border-color: #2563EB;
   box-shadow: 0 16px 35px rgba(15, 23, 42, 0.9);
   transform: translateY(-3px);
 }
 
-.hero-image-placeholder img {
+.hero-image-frame img {
   width: 100%;
   height: auto;
   max-width: 420px;
@@ -533,7 +533,7 @@ a:focus-visible {
   margin: 0;
 }
 
-.setup-illustration-placeholder {
+.setup-illustration {
   width: 100%;
   min-height: 220px;
   border-radius: 16px;
@@ -552,13 +552,13 @@ a:focus-visible {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.setup-illustration-placeholder:hover {
+.setup-illustration:hover {
   border-color: #0F766E;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.7);
   transform: translateY(-3px);
 }
 
-.setup-illustration-placeholder img {
+.setup-illustration img {
   width: 100%;
   height: auto;
   max-width: 420px;
@@ -624,7 +624,7 @@ a:focus-visible {
   margin: 0;
 }
 
-.feature-placeholder-graphic {
+.feature-graphic {
   grid-column: 1 / -1;
   width: 100%;
   min-height: 200px;
@@ -645,13 +645,13 @@ a:focus-visible {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.feature-placeholder-graphic:hover {
+.feature-graphic:hover {
   border-color: #F97316;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
   transform: translateY(-3px);
 }
 
-.feature-placeholder-graphic img {
+.feature-graphic img {
   width: 100%;
   height: auto;
   max-width: 520px;
@@ -693,7 +693,7 @@ a:focus-visible {
   margin-top: 7px;
 }
 
-.show-processor-dashboard-placeholder {
+.show-processor-dashboard {
   width: 100%;
   min-height: 240px;
   border-radius: 16px;
@@ -712,13 +712,13 @@ a:focus-visible {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.show-processor-dashboard-placeholder:hover {
+.show-processor-dashboard:hover {
   border-color: #22C55E;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.85);
   transform: translateY(-3px);
 }
 
-.show-processor-dashboard-placeholder img {
+.show-processor-dashboard img {
   width: 100%;
   height: auto;
   max-width: 520px;
@@ -897,7 +897,7 @@ a:focus-visible {
 }
 
 /* Placeholder image box */
-.placeholder-image-box {
+.image-box {
   width: 100%;
   min-height: 160px;
   border-radius: 12px;
@@ -914,7 +914,7 @@ a:focus-visible {
   box-sizing: border-box;
 }
 
-.placeholder-image-box img {
+.image-box img {
   width: 100%;
   height: auto;
   max-width: 420px;
