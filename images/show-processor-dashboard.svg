@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" fill="none" role="img" aria-label="Show processor dashboard with a live results table and charts">
+  <defs>
+    <linearGradient id="dash-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="dash-bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="dash-green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- window panel -->
+  <rect x="24" y="24" width="712" height="372" rx="18" fill="rgba(11,17,32,0.85)" stroke="rgba(30,64,175,0.7)" stroke-width="2"/>
+
+  <!-- title bar -->
+  <path d="M24 42 a18 18 0 0 1 18 -18 h676 a18 18 0 0 1 18 18 v24 H24 Z" fill="rgba(15,23,42,0.95)"/>
+  <circle cx="50" cy="45" r="5" fill="#F87171"/>
+  <circle cx="68" cy="45" r="5" fill="#FBBF24"/>
+  <circle cx="86" cy="45" r="5" fill="#34D399"/>
+  <rect x="300" y="38" width="160" height="14" rx="7" fill="rgba(148,163,184,0.18)"/>
+  <text x="380" y="49" font-family="Inter, Segoe UI, sans-serif" font-size="10" letter-spacing="1" fill="#94A3B8" text-anchor="middle">k9tmrs.com/results</text>
+
+  <!-- live badge -->
+  <rect x="48" y="84" width="84" height="26" rx="13" fill="rgba(34,197,94,0.16)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+  <circle cx="66" cy="97" r="5" fill="#22C55E"/>
+  <text x="80" y="101" font-family="Poppins, Segoe UI, sans-serif" font-size="11" font-weight="600" fill="#BBF7D0" text-anchor="start">LIVE</text>
+  <text x="148" y="101" font-family="Poppins, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#F9FAFB" text-anchor="start">Hoopers — Ring 1</text>
+
+  <!-- results table -->
+  <g font-family="Inter, Segoe UI, sans-serif">
+    <!-- header row -->
+    <rect x="48" y="128" width="392" height="30" rx="8" fill="rgba(37,99,235,0.14)"/>
+    <text x="64" y="148" font-size="11" letter-spacing="0.6" fill="#93C5FD">PLACE</text>
+    <text x="140" y="148" font-size="11" letter-spacing="0.6" fill="#93C5FD">HANDLER</text>
+    <text x="372" y="148" font-size="11" letter-spacing="0.6" fill="#93C5FD">TIME</text>
+    <!-- rows -->
+    <g>
+      <line x1="48" y1="190" x2="440" y2="190" stroke="rgba(148,163,184,0.18)" stroke-width="1"/>
+      <line x1="48" y1="222" x2="440" y2="222" stroke="rgba(148,163,184,0.18)" stroke-width="1"/>
+      <line x1="48" y1="254" x2="440" y2="254" stroke="rgba(148,163,184,0.18)" stroke-width="1"/>
+      <text x="64" y="182" font-size="13" font-weight="600" fill="#FBBF24">1</text>
+      <rect x="140" y="172" width="120" height="11" rx="5.5" fill="rgba(203,213,245,0.55)"/>
+      <text x="372" y="182" font-size="13" font-weight="600" fill="#7DD3FC">11.92</text>
+      <text x="64" y="214" font-size="13" font-weight="600" fill="#CBD5F5">2</text>
+      <rect x="140" y="204" width="104" height="11" rx="5.5" fill="rgba(203,213,245,0.4)"/>
+      <text x="372" y="214" font-size="13" fill="#CBD5F5">12.84</text>
+      <text x="64" y="246" font-size="13" font-weight="600" fill="#CBD5F5">3</text>
+      <rect x="140" y="236" width="132" height="11" rx="5.5" fill="rgba(203,213,245,0.4)"/>
+      <text x="372" y="246" font-size="13" fill="#CBD5F5">13.07</text>
+      <text x="64" y="278" font-size="13" font-weight="600" fill="#CBD5F5">4</text>
+      <rect x="140" y="268" width="92" height="11" rx="5.5" fill="rgba(203,213,245,0.4)"/>
+      <text x="372" y="278" font-size="13" fill="#CBD5F5">13.55</text>
+    </g>
+  </g>
+
+  <!-- bar chart card -->
+  <rect x="464" y="128" width="248" height="120" rx="12" fill="rgba(15,23,42,0.9)" stroke="rgba(30,64,175,0.7)" stroke-width="1.5"/>
+  <text x="480" y="152" font-family="Inter, Segoe UI, sans-serif" font-size="11" letter-spacing="0.6" fill="#94A3B8">RUNS PER HOUR</text>
+  <g>
+    <rect x="484" y="206" width="22" height="24" rx="4" fill="url(#dash-bar)"/>
+    <rect x="518" y="190" width="22" height="40" rx="4" fill="url(#dash-bar)"/>
+    <rect x="552" y="176" width="22" height="54" rx="4" fill="url(#dash-bar)"/>
+    <rect x="586" y="198" width="22" height="32" rx="4" fill="url(#dash-bar)"/>
+    <rect x="620" y="184" width="22" height="46" rx="4" fill="url(#dash-bar)"/>
+    <rect x="654" y="168" width="22" height="62" rx="4" fill="#34D399"/>
+  </g>
+
+  <!-- trend line card -->
+  <rect x="464" y="264" width="248" height="108" rx="12" fill="rgba(15,23,42,0.9)" stroke="rgba(30,64,175,0.7)" stroke-width="1.5"/>
+  <text x="480" y="288" font-family="Inter, Segoe UI, sans-serif" font-size="11" letter-spacing="0.6" fill="#94A3B8">AVERAGE TIME</text>
+  <polyline points="484,348 518,332 552,338 586,316 620,322 654,300 688,308" fill="none" stroke="url(#dash-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="688" cy="308" r="4" fill="#34D399"/>
+
+  <!-- summary stat under table -->
+  <rect x="48" y="300" width="392" height="72" rx="12" fill="rgba(37,99,235,0.10)" stroke="rgba(37,99,235,0.45)" stroke-width="1.5"/>
+  <text x="72" y="332" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#F9FAFB">48</text>
+  <text x="72" y="352" font-family="Inter, Segoe UI, sans-serif" font-size="11" fill="#9CA3AF">Runs scored</text>
+  <text x="220" y="332" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#7DD3FC">11.92</text>
+  <text x="220" y="352" font-family="Inter, Segoe UI, sans-serif" font-size="11" fill="#9CA3AF">Fastest time</text>
+  <text x="356" y="332" font-family="Poppins, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#34D399">100%</text>
+  <text x="356" y="352" font-family="Inter, Segoe UI, sans-serif" font-size="11" fill="#9CA3AF">Synced</text>
+</svg>

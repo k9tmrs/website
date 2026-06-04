@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" fill="none" role="img" aria-label="System diagram connecting timing hardware, a smartphone, and the show processor">
+  <defs>
+    <linearGradient id="fd-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="fd-teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="fd-green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="fd-phone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0B1120"/>
+    </linearGradient>
+  </defs>
+
+  <!-- connectors -->
+  <g stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round" fill="none">
+    <path d="M196 170 H300" stroke="#2DD4BF"/>
+    <path d="M460 170 H564" stroke="#38BDF8"/>
+  </g>
+  <!-- moving data dots -->
+  <circle cx="248" cy="170" r="4" fill="#5EEAD4"/>
+  <circle cx="512" cy="170" r="4" fill="#7DD3FC"/>
+
+  <!-- Left: timing hardware (sensor gate) -->
+  <g>
+    <rect x="64" y="108" width="132" height="124" rx="14" fill="rgba(15,118,110,0.10)" stroke="url(#fd-teal)" stroke-width="2.5"/>
+    <rect x="92" y="132" width="14" height="64" rx="4" fill="none" stroke="#5EEAD4" stroke-width="2.5"/>
+    <rect x="154" y="132" width="14" height="64" rx="4" fill="none" stroke="#5EEAD4" stroke-width="2.5"/>
+    <g stroke="#A5F3FC" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round">
+      <line x1="106" y1="150" x2="154" y2="150"/>
+      <line x1="106" y1="164" x2="154" y2="164"/>
+      <line x1="106" y1="178" x2="154" y2="178"/>
+    </g>
+    <circle cx="99" cy="128" r="3" fill="#2DD4BF"/>
+    <circle cx="161" cy="128" r="3" fill="#2DD4BF"/>
+    <text x="130" y="218" font-family="Inter, Segoe UI, sans-serif" font-size="12.5" fill="#CBD5F5" text-anchor="middle">Timing gate</text>
+  </g>
+
+  <!-- Center: smartphone -->
+  <g>
+    <rect x="320" y="80" width="120" height="180" rx="20" fill="url(#fd-phone)" stroke="url(#fd-blue)" stroke-width="2.5"/>
+    <rect x="334" y="100" width="92" height="140" rx="10" fill="rgba(37,99,235,0.10)" stroke="rgba(148,163,184,0.35)" stroke-width="1.5"/>
+    <line x1="366" y1="92" x2="394" y2="92" stroke="#475569" stroke-width="3" stroke-linecap="round"/>
+    <!-- mini timer readout -->
+    <text x="380" y="150" font-family="Poppins, Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#7DD3FC" text-anchor="middle">12.84</text>
+    <text x="380" y="168" font-family="Inter, Segoe UI, sans-serif" font-size="9" letter-spacing="1.5" fill="#64748B" text-anchor="middle">SECONDS</text>
+    <rect x="348" y="186" width="64" height="9" rx="4.5" fill="rgba(148,163,184,0.18)"/>
+    <rect x="348" y="186" width="42" height="9" rx="4.5" fill="#2563EB"/>
+    <rect x="348" y="204" width="64" height="9" rx="4.5" fill="rgba(148,163,184,0.18)"/>
+    <rect x="348" y="204" width="30" height="9" rx="4.5" fill="#22C55E"/>
+    <text x="380" y="288" font-family="Inter, Segoe UI, sans-serif" font-size="12.5" fill="#CBD5F5" text-anchor="middle">Your smartphone</text>
+  </g>
+
+  <!-- Right: show processor (cloud + dashboard) -->
+  <g>
+    <rect x="564" y="108" width="132" height="124" rx="14" fill="rgba(37,99,235,0.10)" stroke="url(#fd-blue)" stroke-width="2.5"/>
+    <path d="M598 158 a18 18 0 0 1 34 -6 a14 14 0 0 1 2 28 h-32 a13 13 0 0 1 -4 -22 z" fill="rgba(56,189,248,0.12)" stroke="#7DD3FC" stroke-width="2.5" stroke-linejoin="round"/>
+    <g stroke="#93C5FD" stroke-width="2.5" stroke-linecap="round">
+      <line x1="588" y1="196" x2="672" y2="196"/>
+      <line x1="588" y1="208" x2="648" y2="208"/>
+    </g>
+    <circle cx="630" cy="84" r="13" fill="url(#fd-green)"/>
+    <path d="M624 84 l4 4 l8 -8" stroke="#F0FDF4" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="630" y="218" font-family="Inter, Segoe UI, sans-serif" font-size="12.5" fill="#CBD5F5" text-anchor="middle">Show processor</text>
+  </g>
+</svg>
