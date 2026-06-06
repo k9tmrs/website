@@ -20,15 +20,17 @@ Push to `main` triggers `.github/workflows/deploy.yml`, which uploads the repo r
 
 ## Architecture notes
 
-- **Fully static, two pages sharing one stylesheet/script.** `index.html` and `privacy.html` both load `style.css` and `script.js` and repeat the same `<header>`/navbar and `<footer>` markup inline (there is no templating). If you change the nav or footer, update **both** files. Cross-page nav links use `index.html#section` form; same-page anchors use `#section`.
+- **Fully static, two pages sharing one stylesheet/script.** `index.html` and `privacy.html` both load `style.css` and `script.js`.
 
-- **`script.js` is a single IIFE** with five independently-guarded init functions (`initMobileNav`, `initScrollReveal`, `initNavHighlight`, `initSmoothScroll`, `initContactForm`), all run on `DOMContentLoaded`. Each bails early if its target elements are absent, so sections can be added/removed from the HTML without breaking JS.
+- **The header/navbar and footer are shared, not duplicated.** Both pages contain only `<div id="site-header"></div>` and `<div id="site-footer"></div>` placeholders; `script.js` (`initLayout` → `buildHeader`/`buildFooter`) injects the real markup at runtime, driven by the `NAV_ITEMS` array. **To change the nav or footer, edit `script.js`, not the HTML.** Each page identifies itself via `<body data-page="home|privacy">`: on `home`, nav links are same-page `#section` anchors with `data-nav-target` (for scroll-spy); elsewhere they become `index.html#section`, and the link matching the current standalone page (e.g. Privacy) gets `.active`. Injection is client-side, so the nav/footer require JS to appear.
+
+- **`script.js` is a single IIFE** with init functions run on `DOMContentLoaded`, starting with `initLayout` (which must run first, since the others query the injected header). The rest — `initMobileNav`, `initScrollReveal`, `initNavHighlight`, `initSmoothScroll`, `initContactForm` — each bail early if their target elements are absent, so sections can be added/removed without breaking JS.
 
 - **HTML/JS/CSS are coupled through specific hooks** — preserve these names when editing:
-  - Nav highlighting pairs `data-nav-target="X"` on `.nav-link` with a section `id="X"`.
+  - Nav highlighting pairs `data-nav-target="X"` on `.nav-link` with a section `id="X"`; `initNavHighlight` bails when no such sections exist (so a server-set `.active`, e.g. on the privacy page, is left alone).
   - Scroll-in animations require the `.scroll-reveal` class (JS toggles `.visible` via `IntersectionObserver`).
   - The contact form is **front-end only**: it validates and shows a fake success after a `setTimeout`; it does not POST anywhere. Wiring it to a real backend is unimplemented.
 
 - **All images live in `images/`** — the hero photo (`tmrs-show.jpg`) plus hand-authored, on-brand SVG illustrations (`setup-flow.svg`, `features-diagram.svg`, `show-processor-dashboard.svg`). There is no `assets/` directory. `show-processor-dashboard.svg` is only referenced from the commented-out Show Processors section.
 
-- **Removed-but-not-deleted "Show Processors" section.** It lives as a large HTML comment in `index.html` and commented-out nav links. Re-enabling means uncommenting both the section and its nav entries, not rewriting from scratch.
+- **Removed-but-not-deleted "Show Processors" section.** It lives as a large HTML comment in `index.html`. Re-enabling means uncommenting that section and adding a `{ id: 'show-processors', label: 'For Show Processors' }` entry to `NAV_ITEMS` in `script.js` (the nav links are no longer in the HTML).

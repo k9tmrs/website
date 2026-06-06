@@ -9,6 +9,128 @@
     return Array.prototype.slice.call((scope || document).querySelectorAll(selector));
   }
 
+  // --- Shared layout (header + footer) -------------------------------------
+  // The navbar and footer are identical across pages, so they are defined once
+  // here and injected into the #site-header / #site-footer placeholders. Each
+  // page declares its identity via <body data-page="...">: links resolve to
+  // same-page anchors on the home page and cross-page anchors elsewhere.
+  const NAV_ITEMS = [
+    { id: 'home', label: 'Home' },
+    { id: 'how-it-works', label: 'How It Works' },
+    { id: 'features', label: 'Features & Benefits' },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'hoops', label: 'Hoops' },
+    { id: 'contact', label: 'Contact' },
+    { id: 'privacy', label: 'Privacy Policy', page: 'privacy.html' }
+  ];
+
+  function currentPage() {
+    return (document.body && document.body.getAttribute('data-page')) || 'home';
+  }
+
+  function el(tag, attrs) {
+    const node = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (key) {
+        node.setAttribute(key, attrs[key]);
+      });
+    }
+    return node;
+  }
+
+  function navHref(item, page) {
+    if (page === 'home') return '#' + item.id;
+    if (item.page) return item.page;
+    return 'index.html#' + item.id;
+  }
+
+  function navLinkAttrs(item, page, className) {
+    const attrs = { href: navHref(item, page), class: className };
+    if (page === 'home') {
+      // Scroll-spy highlighting only applies where the target sections exist.
+      attrs['data-nav-target'] = item.id;
+    } else if (item.page && navHref(item, page) === item.page) {
+      // Mark the link to the current standalone page (e.g. Privacy) as active.
+      attrs.class = className + ' active';
+    }
+    return attrs;
+  }
+
+  function buildHeader() {
+    const page = currentPage();
+
+    const header = document.createElement('header');
+    const nav = el('nav', { class: 'navbar', 'aria-label': 'Primary' });
+    const inner = el('div', { class: 'nav-inner' });
+
+    const logo = el('a', {
+      class: 'logo-area',
+      'aria-label': 'K9 TMRS home',
+      href: page === 'home' ? '#home' : 'index.html#home'
+    });
+    logo.appendChild(el('img', { src: 'images/logo.png', alt: 'K9 TMRS', class: 'logo-img' }));
+    inner.appendChild(logo);
+
+    const links = el('div', { class: 'navbar-links', 'aria-label': 'Primary navigation links' });
+    NAV_ITEMS.forEach(function (item) {
+      const link = el('a', navLinkAttrs(item, page, 'nav-link'));
+      link.appendChild(document.createTextNode(item.label));
+      link.appendChild(el('span', { class: 'nav-link-indicator' }));
+      links.appendChild(link);
+    });
+    inner.appendChild(links);
+
+    const toggle = el('button', {
+      class: 'mobile-nav-toggle',
+      type: 'button',
+      'aria-label': 'Toggle navigation menu',
+      'aria-expanded': 'false'
+    });
+    toggle.appendChild(el('span', { class: 'mobile-nav-toggle-icon', 'aria-hidden': 'true' }));
+    inner.appendChild(toggle);
+
+    nav.appendChild(inner);
+
+    const drawer = el('div', { class: 'mobile-nav-drawer', hidden: '' });
+    NAV_ITEMS.forEach(function (item) {
+      const link = el('a', navLinkAttrs(item, page, 'mobile-nav-link'));
+      link.appendChild(document.createTextNode(item.label));
+      drawer.appendChild(link);
+    });
+    nav.appendChild(drawer);
+
+    header.appendChild(nav);
+    return header;
+  }
+
+  function buildFooter() {
+    const footer = el('footer', { class: 'footer' });
+    const inner = el('div', { class: 'footer-inner' });
+
+    const copy = el('p', { class: 'footer-text' });
+    copy.appendChild(document.createTextNode('© 2026 K9 TMRS. All rights reserved.'));
+    inner.appendChild(copy);
+
+    const credit = el('p', { class: 'footer-credit-text' });
+    credit.appendChild(document.createTextNode('Created by Neon'));
+    inner.appendChild(credit);
+
+    footer.appendChild(inner);
+    return footer;
+  }
+
+  function mount(id, node) {
+    const placeholder = document.getElementById(id);
+    if (placeholder && placeholder.parentNode) {
+      placeholder.parentNode.replaceChild(node, placeholder);
+    }
+  }
+
+  function initLayout() {
+    mount('site-header', buildHeader());
+    mount('site-footer', buildFooter());
+  }
+
   function initMobileNav() {
     const toggle = qs('.mobile-nav-toggle');
     const drawer = qs('.mobile-nav-drawer');
@@ -89,6 +211,10 @@
         return { link: link, section: section };
       })
       .filter(Boolean);
+
+    // No in-page sections to track (e.g. the privacy page) — leave any
+    // server-rendered active state untouched.
+    if (!sections.length) return;
 
     function setActiveLink() {
       const scrollPos = window.scrollY || window.pageYOffset;
@@ -238,6 +364,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     try {
+      initLayout();
       initMobileNav();
       initScrollReveal();
       initNavHighlight();

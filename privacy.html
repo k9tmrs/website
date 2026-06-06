@@ -10,33 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="page-wrapper">
-  <header>
-    <nav class="navbar" aria-label="Primary">
-      <div class="nav-inner">
-        <a href="index.html#home" class="logo-area" aria-label="K9 TMRS home">
-          <img src="images/logo.png" alt="K9 TMRS" class="logo-img" />
-        </a>
-        <div class="navbar-links" aria-label="Primary navigation links">
-          <a href="index.html#home" class="nav-link">Home<span class="nav-link-indicator"></span></a>
-          <a href="index.html#how-it-works" class="nav-link">How It Works<span class="nav-link-indicator"></span></a>
-          <a href="index.html#features" class="nav-link">Features &amp; Benefits<span class="nav-link-indicator"></span></a>
-          <a href="index.html#contact" class="nav-link">Contact<span class="nav-link-indicator"></span></a>
-          <a href="privacy.html" class="nav-link active">Privacy Policy<span class="nav-link-indicator"></span></a>
-        </div>
-        <button class="mobile-nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="mobile-nav-toggle-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="mobile-nav-drawer" hidden>
-        <a href="index.html#home" class="mobile-nav-link">Home</a>
-        <a href="index.html#how-it-works" class="mobile-nav-link">How It Works</a>
-        <a href="index.html#features" class="mobile-nav-link">Features &amp; Benefits</a>
-        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
-        <a href="privacy.html" class="mobile-nav-link">Privacy Policy</a>
-      </div>
-    </nav>
-  </header>
+<body class="page-wrapper" data-page="privacy">
+  <!-- Header is injected by script.js (initLayout) — see NAV_ITEMS -->
+  <div id="site-header"></div>
 
   <main id="home" tabindex="-1">
     <section class="section-wrapper" aria-labelledby="privacy-heading">
@@ -97,12 +73,8 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-text">© 2026 K9 TMRS. All rights reserved.</p>
-      <p class="footer-credit-text">Created by Neon</p>
-    </div>
-  </footer>
+  <!-- Footer is injected by script.js (initLayout) -->
+  <div id="site-footer"></div>
 
   <script src="script.js"></script>
 </body>
