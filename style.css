@@ -89,27 +89,16 @@ a:focus-visible {
   gap: 8px;
 }
 
-.logo-mark {
-  width: 40px;
+.logo-img {
+  display: block;
   height: 40px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 20% 20%, #22C55E 0%, #16A34A 35%, #0F766E 70%, #0B1120 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #E5E7EB;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  width: auto;
 }
 
-.logo-text {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-  color: #F9FAFB;
+@media (max-width: 480px) {
+  .logo-img {
+    height: 34px;
+  }
 }
 
 .navbar-links {
