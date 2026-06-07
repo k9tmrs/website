@@ -68,7 +68,7 @@
       'aria-label': 'K9 TMRS home',
       href: page === 'home' ? '#home' : 'index.html#home'
     });
-    logo.appendChild(el('img', { src: 'images/logo.png', alt: 'K9 TMRS', class: 'logo-img' }));
+    logo.appendChild(el('img', { src: 'images/logo.svg', alt: 'K9 TMRS', class: 'logo-img' }));
     inner.appendChild(logo);
 
     const links = el('div', { class: 'navbar-links', 'aria-label': 'Primary navigation links' });
