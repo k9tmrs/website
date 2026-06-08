@@ -294,6 +294,26 @@ a:focus-visible {
   margin-bottom: 16px;
 }
 
+.hero-logo {
+  display: block;
+  width: auto;
+  height: 200px;
+  max-width: 100%;
+  margin: 0 auto 24px auto;
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo {
+    height: 110px;
+  }
+}
+
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
