@@ -1060,10 +1060,6 @@ a:focus-visible {
   .hero-layout {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .hero-visual {
-    order: -1;
-  }
 }
 
 @media (max-width: 900px) {
