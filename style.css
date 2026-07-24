@@ -703,6 +703,11 @@ a:focus-visible {
   flex-shrink: 0; /* long bullet text otherwise squeezes the dot into a sliver */
 }
 
+.show-processor-bullet-item strong {
+  font-weight: 700;
+  color: #F9FAFB;
+}
+
 .show-processor-dashboard {
   width: 100%;
   min-height: 240px;
