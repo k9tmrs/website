@@ -700,6 +700,7 @@ a:focus-visible {
   border-radius: 999px;
   background: #22C55E;
   margin-top: 7px;
+  flex-shrink: 0; /* long bullet text otherwise squeezes the dot into a sliver */
 }
 
 .show-processor-dashboard {
