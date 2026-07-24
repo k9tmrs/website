@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="hooplan-course-title hooplan-course-desc">
+  <title id="hooplan-course-title">A Hoopers course plan drawn in Hooplan</title>
+  <desc id="hooplan-course-desc">Top-down course plan: numbered hoops, a barrel and a finish gate joined by the dog's flowing running line, with a suggested judge position and its sightline.</desc>
+
+  <!-- panel -->
+  <rect x="4" y="4" width="632" height="472" rx="20" fill="#0F172A" stroke="rgba(148, 163, 184, 0.25)" stroke-width="2"/>
+
+  <!-- ring boundary -->
+  <rect x="36" y="36" width="568" height="408" rx="14" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="10 8"/>
+
+  <!-- judge sightline cone -->
+  <polygon points="300,390 420,290 480,360" fill="rgba(165, 243, 252, 0.08)"/>
+
+  <!-- running line -->
+  <path d="M 80 400
+           C 110 370, 135 350, 160 330
+           C 195 305, 235 280, 270 270
+           C 305 260, 330 252, 355 242
+           C 390 226, 410 185, 440 170
+           C 478 151, 515 185, 530 240
+           C 542 282, 505 320, 470 340
+           C 435 360, 398 384, 366 398"
+        fill="none" stroke="#60A5FA" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+  <!-- arrowhead at the finish -->
+  <polygon points="366,398 382,384 380,404" fill="#60A5FA"/>
+
+  <!-- start & finish markers -->
+  <rect x="58" y="406" width="26" height="20" rx="6" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="71" y="421" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#E5E7EB" text-anchor="middle">S</text>
+  <rect x="338" y="410" width="26" height="20" rx="6" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="351" y="425" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#E5E7EB" text-anchor="middle">F</text>
+
+  <!-- hoops: bars perpendicular to the running line -->
+  <line x1="146" y1="316" x2="174" y2="344" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="266" y1="250" x2="274" y2="290" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="440" y1="150" x2="440" y2="190" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="510" y1="244" x2="550" y2="236" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <line x1="461" y1="322" x2="479" y2="358" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- barrel -->
+  <circle cx="352" cy="216" r="15" fill="#1E3A8A" stroke="#3B82F6" stroke-width="4"/>
+
+  <!-- obstacle numbers -->
+  <g font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    <circle cx="136" cy="350" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="136" y="354" fill="#E5E7EB">1</text>
+    <circle cx="252" cy="244" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="252" y="248" fill="#E5E7EB">2</text>
+    <circle cx="330" cy="196" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="330" y="200" fill="#E5E7EB">3</text>
+    <circle cx="422" cy="144" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="422" y="148" fill="#E5E7EB">4</text>
+    <circle cx="556" cy="212" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="556" y="216" fill="#E5E7EB">5</text>
+    <circle cx="492" cy="352" r="10" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.5"/>
+    <text x="492" y="356" fill="#E5E7EB">6</text>
+  </g>
+
+  <!-- judge -->
+  <circle cx="300" cy="390" r="9" fill="#0E7490" stroke="#A5F3FC" stroke-width="2"/>
+  <text x="300" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#A5F3FC" text-anchor="middle">Judge</text>
+
+  <!-- rule check chip -->
+  <g>
+    <rect x="52" y="56" width="176" height="30" rx="15" fill="rgba(15, 118, 110, 0.25)" stroke="rgba(165, 243, 252, 0.45)" stroke-width="1.5"/>
+    <circle cx="70" cy="71" r="7" fill="#10B981"/>
+    <text x="70" y="75" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="#022C22" text-anchor="middle">✓</text>
+    <text x="86" y="75" font-family="Inter, Arial, sans-serif" font-size="13" fill="#A7F3D0">All rule checks pass</text>
+  </g>
+</svg>

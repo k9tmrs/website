@@ -20,6 +20,7 @@
     { id: 'features', label: 'Features & Benefits' },
     { id: 'pricing', label: 'Pricing' },
     { id: 'hoops', label: 'Hoops' },
+    { id: 'hooplan', label: 'Hooplan' },
     { id: 'contact', label: 'Contact' },
     { id: 'privacy', label: 'Privacy Policy', page: 'privacy.html' }
   ];
