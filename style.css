@@ -764,6 +764,25 @@ a:focus-visible {
 .card-footer {
   margin-top: auto;
   padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.store-badge-link {
+  display: inline-flex;
+  border-radius: 8px;
+}
+
+.store-badge {
+  display: block;
+  width: auto;
+}
+
+.store-badge-testflight,
+.store-badge-play {
+  height: 44px;
 }
 
 /* Pricing */
