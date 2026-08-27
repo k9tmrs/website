@@ -16,7 +16,7 @@ python -m http.server 8000   # then visit http://localhost:8000
 
 ## Deployment
 
-Push to `main` triggers `.github/workflows/deploy.yml`, which uploads the repo root as-is (no build) and publishes to GitHub Pages. A `.nojekyll` file disables GitHub's default Jekyll processing. **Active development happens on the `neon` branch** — merge to `main` to deploy.
+**`neon` is the production branch: every push to `neon` deploys straight to k9tmrs.com.** GitHub Pages is configured in "deploy from branch" mode on `neon` (the built-in `pages build and deployment` workflow, ~30s per deploy). A `.nojekyll` file disables GitHub's default Jekyll processing. `.github/workflows/deploy.yml` (trigger: push to `main`) is left over from the previous setup where `main` was the deploy branch — pushes to `main` no longer control the live site.
 
 ## Architecture notes
 
